@@ -130,7 +130,7 @@ const OrderDetail = ()=>{
     useEffect(()=>{ 
         updateTime();
         getOrderDetail();
-    },[])
+    })
 
 
 

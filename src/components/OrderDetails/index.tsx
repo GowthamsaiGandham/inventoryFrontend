@@ -133,7 +133,7 @@ const onClickingDetailView = (orderId:number)=>{
 
  useEffect(()=>{
       getOrders();
- },[])
+ })
 
  return(
    <div className = 'order-details-bg-container'>

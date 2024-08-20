@@ -69,7 +69,7 @@ const Supplier = ()=>{
 
    useEffect(()=>{
         getSuppliers();
-   },[])
+   })
  
 
     return(

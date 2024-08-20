@@ -2,10 +2,11 @@ import Cookies from "js-cookie"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import {SpinnerRoundOutlined} from "spinners-react";
+
 
 import "./index.css"
 import Product from "../ProductCard";
+import Loader from "../Loader";
 
 
 interface Product {
@@ -58,13 +59,12 @@ const SupplierDetails = ()=>{
 
     useEffect(()=>{
         getSupplier()
-    })
+    },[])
 
     return(
         <div className = "supplier-detail-bg-container">
-           {isLoading?<div className = "spinner-container">
-       <SpinnerRoundOutlined size={170} thickness={128} speed={136} color="white" />
-       </div>:( <>
+           {isLoading?
+       <Loader/>:( <>
             <div className = "supplier-detail-card-container">
                   <img src={supplier.imageUrl} className  = "supplier-image"/>
                   <p className = "supplier-name">Name : {supplier.supplierName}</p>

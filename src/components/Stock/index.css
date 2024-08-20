@@ -51,10 +51,3 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.spinner-container{
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}

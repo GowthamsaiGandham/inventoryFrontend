@@ -14,7 +14,7 @@
 
  .suppliers-bg-container{
    background-color: #DE9F58;
-   
+   min-height: 100vh;
  }
 
  

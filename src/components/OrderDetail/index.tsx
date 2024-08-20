@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 
 import UserProductCard from "../UserProductCard";
 
-import {SpinnerRoundOutlined} from "spinners-react";
 
 
 
 import "./index.css"
 
 import Cookies from "js-cookie";
+import Loader from "../Loader";
 
 interface User {
     userId: number;
@@ -130,15 +130,14 @@ const OrderDetail = ()=>{
     useEffect(()=>{ 
         updateTime();
         getOrderDetail();
-    })
+    },[])
 
 
 
     return(
       <div className = "order-detail-bg-conatiner">
-        {isLoading?<div className = "spinner-container">
-       <SpinnerRoundOutlined size={170} thickness={128} speed={136} color="white" />
-       </div>:<div>
+        {isLoading?
+         <Loader/>:<div>
         <div className = "order-detail-top-part-container">
             <div className = "user-details-container">
                 <img className = "user-image" src={orderDetail.user.imageUrl}/>

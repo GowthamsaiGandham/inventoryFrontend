@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./index.css"
 import Header from '../Header';
+import Loader from '../Loader';
 
 interface Product {
     productId: number;
@@ -34,6 +35,8 @@ interface Supplier {
 
 const Supplier = ()=>{
     const [suppliersList,setSuppliers] = useState<Supplier[]>([])
+
+    const [isLoading,setLoading] = useState<boolean>(true);
 
     let count = 0;
 
@@ -65,17 +68,19 @@ const Supplier = ()=>{
         const response = await fetch("http://localhost:8080/suppliers",options);
         const jsonData = await response.json();
         setSuppliers(jsonData);
+        setLoading(false);
   }
 
    useEffect(()=>{
         getSuppliers();
-   })
+   },[])
  
 
     return(
         <div className = "suppliers-bg-container">
                 <Header/>
-                <div className="supplier-table-container">
+                {isLoading?
+         <Loader/>:<div className="supplier-table-container">
                     <table>
                         <thead>
                             <tr>
@@ -109,7 +114,7 @@ const Supplier = ()=>{
                         )})}
                         </tbody>
                     </table>
-                </div>
+                </div>}
         </div>
     )
 }

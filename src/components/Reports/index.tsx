@@ -2,10 +2,11 @@ import {useState,useEffect} from "react"
 import Product from "../ProductCard";
 import Cookies  from "js-cookie";
 
-import {SpinnerRoundOutlined} from "spinners-react"
+
 
 import "./index.css"
 import Header from "../Header";
+import Loader from "../Loader";
 
 interface ProductType{
     productId: number;
@@ -92,7 +93,7 @@ const Reports = ()=>{
             <div>
                 {
                     isLoading1?<div className = "spinner-container">
-                    <SpinnerRoundOutlined size={170} thickness={128} speed={136} color="white" />
+                    <Loader />
                     </div>:(
                         <div className = "reports-heading-products-container">
                               <h1 className = "reports-sub-heading">Products To be Import</h1>
@@ -109,9 +110,7 @@ const Reports = ()=>{
             </div>
             <div className="reports-suppliers-inactive-bg-container">
            
-             {isLoading2?<div className = "spinner-container">
-       <SpinnerRoundOutlined size={170} thickness={128} speed={136} color="white" />
-       </div>:<div className = "inactive-suppliers-and-heading-container">
+             {isLoading2?<Loader/>:<div className = "inactive-suppliers-and-heading-container">
                 <h1 className = "reports-sub-heading">Inactive Suppliers</h1>
                 <table className="table-container">
                 <thead className = "table-header">

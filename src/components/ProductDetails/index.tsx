@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 import Cookies from "js-cookie";
 import Header from "../Header";
+import Loader from "../Loader";
 
 interface ProductType{
     productId: number;
@@ -26,6 +27,8 @@ interface ProductType{
 const ProductDetails = ()=>{
    const [productDetails,setProductDetails] = useState<ProductType>({} as ProductType);
 
+   const [isLoading,setLoading] = useState(true);
+
    const { productId } = useParams<{ productId: string }>();
 
     const getProductDetails = async ()=>{
@@ -42,31 +45,33 @@ const ProductDetails = ()=>{
         const response = await fetch(url,options);
         const jsonData = await response.json();
         setProductDetails(jsonData);
+        setLoading(false);
     }
 
     useEffect(()=>{
       getProductDetails();
-    })
+    },[])
 
     
 
     return(
 <div className="product-details-bg-container">
     <Header/>
-    <div className = "product-details-image-sub-details-container">
-           <div className="product-details-image-container">
-             <img src={productDetails.imageUrl} className="product-details-image"/>
-           </div>
-            <div className = "product-sub-details-container">
-                <p className = "product-subdetails"><span className="product-details-subheading">Name</span> : {productDetails.productName}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Brand </span>: {productDetails.brand}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Price</span> : {productDetails.price}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Quantity</span> : {productDetails.quantity}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Reorder Level</span> : {productDetails.reorderLevel}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Total Amount</span> : {productDetails.totalAmount}</p>
-                <p  className = "product-subdetails"><span className="product-details-subheading">Description</span>: {productDetails.description}</p>
-            </div>
-    </div>
+{isLoading?
+         <Loader/>:<div className = "product-details-image-sub-details-container">
+        <div className="product-details-image-container">
+            <img src={productDetails.imageUrl} className="product-details-image"/>
+        </div>
+        <div className = "product-sub-details-container">
+            <p className = "product-subdetails"><span className="product-details-subheading">Name</span> : {productDetails.productName}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Brand </span>: {productDetails.brand}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Price</span> : {productDetails.price}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Quantity</span> : {productDetails.quantity}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Reorder Level</span> : {productDetails.reorderLevel}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Total Amount</span> : {productDetails.totalAmount}</p>
+            <p  className = "product-subdetails"><span className="product-details-subheading">Description</span>: {productDetails.description}</p>
+        </div>
+</div>}
 </div>
     )
 }

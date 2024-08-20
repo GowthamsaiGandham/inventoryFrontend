@@ -2,12 +2,13 @@ import Product from "../ProductCard";
 
 import { useEffect, useState } from "react";
 
-import { SpinnerRoundOutlined } from 'spinners-react';
+
 
 import Cookies from "js-cookie";
 
 import "./index.css"
 import Header from "../Header";
+import Loader from "../Loader";
 
 
 
@@ -54,9 +55,7 @@ const Stock = ()=>{
    return(
     <div className = "stock-bg-container">
        <Header/>
-       {isLoading ?<div className = "spinner-container">
-       <SpinnerRoundOutlined size={170} thickness={128} speed={136} color="white" />
-       </div>:
+       {isLoading ?<Loader />:
        <>
        <div className = "products-heading-and-add-btn-container">
         <h1 className = "products-heading">Products</h1>
@@ -78,6 +77,8 @@ const Stock = ()=>{
    )
 
 }
+
+
 
 
 export default Stock;

@@ -11,6 +11,7 @@ import Cookies from "js-cookie"
 
 import "./index.css"
 import Header from "../Header";
+import Loader from "../Loader";
 
 interface User {
     userId: number;
@@ -74,6 +75,7 @@ const getFormattedDate = (dateString: string): string => {
 const OrderDetails = ()=>{
  const navigate = useNavigate();
 
+ const [isLoading,setLoading] = useState<boolean>(true);
 
  const [ordersList,setOrdersList] = useState<Order[]>([]);
 
@@ -97,6 +99,7 @@ const onClickingDetailView = (orderId:number)=>{
        const response = await fetch("http://localhost:8080/orders",options);
        const jsonData = await response.json();
        setOrdersList(jsonData);
+       setLoading(false);
  }
 
 
@@ -133,36 +136,37 @@ const onClickingDetailView = (orderId:number)=>{
 
  useEffect(()=>{
       getOrders();
- })
+ },[])
 
  return(
    <div className = 'order-details-bg-container'>
     <Header/>
-    <div>
-         <h1 className = "orders-heading">Order Details</h1>
-         <table className = "table-container">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Ordered Date</th>
-                        <th>Delivery Address</th>
-                        <th>Total Amount</th>
-                        <th>Payment Status</th>
+{isLoading?
+         <Loader/>:<div>
+        <h1 className = "orders-heading">Order Details</h1>
+        <table className = "table-container">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ordered Date</th>
+                    <th>Delivery Address</th>
+                    <th>Total Amount</th>
+                    <th>Payment Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {ordersList.map((each:Order) => (
+                    <tr key={each.orderId}  onClick={() => onClickingDetailView(each.orderId)}>
+                        <td>{getCountValue()}</td>
+                        <td>{getFormattedDate(each.orderedDate)}</td>
+                        <td>{each.user.deliveryAddress}</td>
+                        <td>{each.totalAmount}</td>
+                        <td>{getPaymentStatus(each.paymentStatus,each.deliveryDate,each.orderId)}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {ordersList.map((each:Order) => (
-                        <tr key={each.orderId}  onClick={() => onClickingDetailView(each.orderId)}>
-                            <td>{getCountValue()}</td>
-                            <td>{getFormattedDate(each.orderedDate)}</td>
-                            <td>{each.user.deliveryAddress}</td>
-                            <td>{each.totalAmount}</td>
-                            <td>{getPaymentStatus(each.paymentStatus,each.deliveryDate,each.orderId)}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-    </div>
+                ))}
+            </tbody>
+        </table>
+</div>}
     </div>
  )
 }

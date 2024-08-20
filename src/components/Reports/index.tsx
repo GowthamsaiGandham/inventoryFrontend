@@ -56,7 +56,7 @@ const Reports = ()=>{
                 }
                 }
                 
-                const response = await fetch("http://localhost:8080/products",options);
+                const response = await fetch("https://inventorymanagement-wiks.onrender.com/products",options);
                 const data: ProductType[] = await response.json();
                 setProductsList(data);
                 setLoading1(false);
@@ -69,7 +69,7 @@ const Reports = ()=>{
                      Authorization:jwtToken
                  }
              }
-            const response = await fetch("http://localhost:8080/suppliers",options);
+            const response = await fetch("https://inventorymanagement-wiks.onrender.com/suppliers",options);
             const jsonData = await response.json();
             setInactiveSuppliers(jsonData);
             setLoading2(false);

@@ -65,7 +65,7 @@ const Supplier = ()=>{
                  Authorization:jwtToken
              }
          }
-        const response = await fetch("http://localhost:8080/suppliers",options);
+        const response = await fetch("https://inventorymanagement-wiks.onrender.com/suppliers",options);
         const jsonData = await response.json();
         setSuppliers(jsonData);
         setLoading(false);

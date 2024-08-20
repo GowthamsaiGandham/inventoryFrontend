@@ -96,7 +96,7 @@ const onClickingDetailView = (orderId:number)=>{
                 Authorization:jwtToken
             }
         }
-       const response = await fetch("http://localhost:8080/orders",options);
+       const response = await fetch("https://inventorymanagement-wiks.onrender.com/orders",options);
        const jsonData = await response.json();
        setOrdersList(jsonData);
        setLoading(false);

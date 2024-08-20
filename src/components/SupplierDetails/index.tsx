@@ -48,7 +48,7 @@ const SupplierDetails = ()=>{
                 Authorization:jwtToken
             }
         }
-        const url = `http://localhost:8080/suppliers/${supplierId}`;
+        const url = `https://inventorymanagement-wiks.onrender.com/suppliers/${supplierId}`;
        
        const response = await fetch(url,options);
        const jsonData = await response.json();

@@ -98,13 +98,7 @@ const OrderDetail = ()=>{
     }
 
   
-    const updateTime = ()=>{
-        
-        setInterval(()=>{
-            setCurrentDate(new Date());
-        },1000);
-    }
-    
+
 
     const getOrderDetail = async ()=>{
           const jwtToken = `Bearer ${Cookies.get("jwtToken")}`;
@@ -118,7 +112,7 @@ const OrderDetail = ()=>{
             }
           }
 
-          const url =`http://localhost:8080/orders/${orderId}`;
+          const url =`https://inventorymanagement-wiks.onrender.com/orders/${orderId}`;
 
           const response = await fetch(url,options);
           const jsonData = await response.json();
@@ -127,11 +121,20 @@ const OrderDetail = ()=>{
           setLoading(false);
     }
 
-    useEffect(()=>{ 
-        updateTime();
-        getOrderDetail();
-    },[])
+   
 
+    useEffect(() => {
+       
+        const interval = setInterval(() => {
+          setCurrentDate(new Date());
+        }, 1000);
+    
+        return () => clearInterval(interval); 
+      }, []);
+
+      useEffect(()=>{
+         getOrderDetail();
+      },[]);
 
 
     return(

@@ -1,4 +1,4 @@
-import "./index.css"
+
 
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import Header from "../Header";
 import Loader from "../Loader";
+
+import "./index.css"
 
 interface ProductType{
     productId: number;
@@ -40,7 +42,8 @@ const ProductDetails = ()=>{
             }
         }
 
-        const url = `http://localhost:8080/products/${productId}`
+
+        const url = `https://inventorymanagement-wiks.onrender.com/products/${productId}`
 
         const response = await fetch(url,options);
         const jsonData = await response.json();

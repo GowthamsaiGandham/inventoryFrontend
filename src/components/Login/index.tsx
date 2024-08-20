@@ -57,7 +57,7 @@ const Login = ()=>{
             body:JSON.stringify(loginData)
         }
 
-        const response =  await fetch("http://localhost:8080/login",options);
+        const response =  await fetch("https://inventorymanagement-wiks.onrender.com/login",options);
 
         if(response.ok == true){
             const jsonData = await response.json();

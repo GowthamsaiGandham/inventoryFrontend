@@ -42,7 +42,7 @@ const Stock = ()=>{
             }
          }
          
-         const response = await fetch("http://localhost:8080/products",options);
+         const response = await fetch("https://inventorymanagement-wiks.onrender.com/products",options);
          const data: ProductType[] = await response.json();
          setProductsList(data);
          setLoading(false);

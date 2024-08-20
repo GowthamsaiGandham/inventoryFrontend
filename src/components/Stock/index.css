@@ -1,0 +1,60 @@
+.product-cards-bg-container{
+    list-style-type: none;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stock-bg-container{
+   background-color: #DE9F58;
+   min-height: 100vh;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.products-heading-and-add-btn-container{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 0 20px 0 20px;
+}
+
+.products-heading{
+  font-family: Roboto;
+  color: #4A2C00;
+  font-size: 40px;
+  text-align: end;
+  width: 50%;
+}
+
+.products-add-btn-container{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.products-add-btn{
+    width: 100px;
+    height: 40px;
+    background-color:white;
+    color: #DE9F58;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.spinner-container{
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

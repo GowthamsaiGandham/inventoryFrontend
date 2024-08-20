@@ -1,0 +1,32 @@
+.product-card-image{
+    width: 200px;
+    height: 200px;
+}
+
+.product-card-heading{
+    font-family: Roboto;
+    font-size: 20px;
+    color: black;
+   
+}
+
+.link-element{
+    text-decoration: none;
+}
+
+.product-card-bg-container{
+    background-color: white;
+    border-width: 1px;
+    box-shadow: 1px 1px 4px white;
+    border-radius: 10px;
+    width: 280px;
+    height: 260px;
+    margin:14px;
+    margin-left: 18px;
+    margin-right: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}

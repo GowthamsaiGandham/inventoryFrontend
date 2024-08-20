@@ -1,0 +1,76 @@
+.add-or-update-products-bg-container{
+    background-color: #DE9F58;
+    min-height: 100vh;
+}
+
+.add-or-update-products-name{
+    font-size:20px;
+    font-family: Roboto;
+    font-weight: 600;
+    color: #4A2C00;
+}
+
+.add-or-update-products-name-input-element{
+    width: 240px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+.add-or-update-products-name-and-input-element-container{
+    padding: 10px 0 10px 20px;
+}
+
+.add-or-update-products-quantity-input-element{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+.add-product-btn{
+    width: 200px;
+    height: 40px;
+    background-color:white;
+    color: #DE9F58;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.add-product-btn-container{
+    text-align: center;
+}
+
+.add-or-update-products-description-and-textarea-el-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.textarea-element{
+    margin-left: 10px;
+}
+
+.name-brand-parts-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.label-el{
+    width: 130px;
+    display: inline-block;
+}
+
+.reorderlabel-element{
+    margin-left: 140px;
+}
+
+.add-product-form-container{
+    padding:30px 0 0 20px;
+}

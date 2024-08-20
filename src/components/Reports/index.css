@@ -1,0 +1,34 @@
+
+.reports-bg-container{
+    background-color: #DE9F58;
+}
+
+.reports-heading{
+    font-family: Roboto;
+    color: #4A2C00;
+    font-size: 40px;
+    text-align: center;
+}
+
+.reports-sub-heading{
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: 800;
+    color: #4A2C00;
+}
+
+.reports-heading-products-container{
+    padding: 0 20px 0 20px;
+}
+
+
+.reports-products-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.reports-suppliers-inactive-bg-container{
+    padding: 0 20px 30px 20px;
+}

@@ -1,0 +1,20 @@
+ .active-supplier{
+    font-weight: bold;
+    color: green;
+ }
+
+ .inactive-supplier{
+    font-weight: bold;
+    color: red;
+ }
+
+ .supplier-table-container{
+   margin: 30px 10px 0 10px;
+ }
+
+ .suppliers-bg-container{
+   background-color: #DE9F58;
+   
+ }
+
+ 

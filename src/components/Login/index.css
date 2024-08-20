@@ -1,0 +1,64 @@
+.username-input-element{
+    width: 250px;
+    height: 23px;
+    font-size: 17px;
+    font-family: Roboto;
+    color: #DE9F58;
+    padding:3px 0 3px 4px;
+}
+
+.input-el-and-label-container{
+    margin-bottom: 10px;
+}
+
+.role-select-element{
+    width: 258px;
+    height: 30px;
+    color: #DE9F58;
+}
+
+.username-label{
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight:500;
+    color: white;
+}
+
+.login-card-container{
+    background-color: #DE9F58;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #DE9F58;
+    padding: 30px;
+}
+
+.login-bg-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220313/pngtree-large-warehouse-product-warehouse-of-a-factory-image_997557.jpg");
+    background-size: cover;
+ }
+
+ .submit-btn{
+    width: 90px;
+    height: 35px;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #DE9F58;
+    border-radius: 5px;
+    border-color: #DE9F58;
+ }
+
+ .error-msg{
+    color: red;
+    font-family: Roboto;
+    font-size:16px;
+ }
+
+ .submit-btn-container{
+    text-align: center;
+    margin-top: 15px;
+ }

@@ -1,0 +1,25 @@
+.deliverying-no-products-container{
+    background-color: #DE9F58;
+    min-height: 100vh;
+}
+
+.deliverying-no-products-image{
+    width: 500px;
+}
+
+.deliverying-no-products-caption{
+    color: #4A2C00;
+    font-family: Roboto;
+}
+
+.deliverying-no-products-image-and-caption-container{
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}

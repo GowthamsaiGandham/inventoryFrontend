@@ -1,0 +1,30 @@
+.user-product-image{
+    width:180px;
+    height: 180px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+.user-product-name{
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.user-product-quantity{
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.user-product-card-container{
+    background-color: white;
+    color: #4A2C00;
+    border-radius: 10px;
+    width: 220px;
+    height: 270px;
+    box-shadow: 2px 2px 4px #DE9F58;
+    padding: 10px 10px 0 10px;
+    margin-right: 20px;
+}
